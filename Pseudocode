@@ -1,0 +1,63 @@
+basic paln:
+
+A game of rock / paper / scissors:
+
+computer vs. player
+--------------------
+
+page open:
+
+        header
+        small paragraph about how the game is working.
+
+a main section: 
+        round:
+       player choises: x y z
+       when the player clicking one of the choises, we have a function that
+       check witch one is stronger between the two.
+       then we get a messege who is the winner.
+       a point add to the winner.
+       a new round starting.
+       when one of the players score five points,
+       a meggege showed that either you won or loose.
+
+
+Pseudocode:
+
+section 1 :
+
+                header : rock paper scissors
+                p - this is your chance to stop the machines before it's even started!!
+
+                score ->
+                function : score ( ) => {
+                        if win ? player +1 : computer +1 ;
+                }
+
+
+
+section 2 :
+
+                function: round
+
+                        header: choose your weapon:
+
+                         -weaponOfChoise - 
+                         buttons: Rock  - Paper - scissors
+
+                         player choise -> if playerChoise > computerChoise ? win : loose :
+
+                                if rock -> logic of rock > scissors ? win : loose.
+
+                                else if paper -> logic of paper > rock ? win : loose
+
+                                else if scissors -> logic of scissors > paper ? win : loose
+
+                
+
+
+                        
+                        
+
+                        
+section 3 :
