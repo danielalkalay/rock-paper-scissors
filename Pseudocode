@@ -12,11 +12,11 @@ page open:
 
 a main section: 
         round:
-       player choises: x y z
-       when the player clicking one of the choises, we have a function that
+       player choices: x y z
+       when the player clicking one of the choices, we have a function that
        check witch one is stronger between the two.
        then we get a messege who is the winner.
-       a point add to the winner.
+       a point added to the winner.
        a new round starting.
        when one of the players score five points,
        a meggege showed that either you won or loose.
@@ -42,7 +42,7 @@ section 2 :
 
                         header: choose your weapon:
 
-                         -weaponOfChoise - 
+                         -weaponOfChoice - 
                          buttons: Rock  - Paper - scissors
 
                          player choise -> if playerChoise > computerChoise ? win : loose :
