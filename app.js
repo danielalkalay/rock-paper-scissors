@@ -2,15 +2,13 @@
 
 let userScore = 0;
 let computerScore = 0;
-let roundWiner = "";
+let endGame_div = document.querySelector(".end-game");
+let choices_div = document.querySelector("#choices");
+let newGame_div = document.querySelector(".new-game");
 const userScore_span = document.querySelector("#user-score");
 const computerScore_span = document.querySelector("#computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result > p");
-
-let endGame_div = document.querySelector(".end-game");
-let choices_div = document.querySelector("#choices");
-let newGame_div = document.querySelector(".new-game");
 
 const rock_div = document.querySelector("#r");
 const paper_div = document.querySelector("#p");
@@ -20,23 +18,31 @@ const scissors_div = document.querySelector("#s");
 
 // finish and reset functions
 
+newGame_div.addEventListener("click", () => reset());
+
 const reset = () => {
-  if ((result_div.innerHTML = "finish")) {
-    computerScore = 0;
-    userScore = 0;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    choices_div.style.display = "flex";
-    endGame_div.style.display = "none";
-    // choices_div.style.display = "none";
-  }
+  computerScore = 0;
+  userScore = 0;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  choices_div.style.display = "flex";
+  endGame_div.style.display = "none";
+  result_div.innerHTML = "do your first move";
+  // if ((result_div.innerHTML = "finish")) {
+  // }
 };
 
 const finish = () => {
   if ((userScore === 5) | (computerScore === 5)) {
-    result_div.innerHTML = "finish";
-    choices_div.style.display = "none";
-    endGame_div.style.display = "flex";
+    if (userScore === 5) {
+      result_div.innerHTML = "you are the winer out of five games";
+      choices_div.style.display = "none";
+      endGame_div.style.display = "flex";
+    } else {
+      result_div.innerHTML = "the computer is the winer out of five games";
+      choices_div.style.display = "none";
+      endGame_div.style.display = "flex";
+    }
   }
 };
 
@@ -70,8 +76,6 @@ const getComputerChoice = () => {
 };
 
 //Round
-
-newGame_div.addEventListener("click", () => reset());
 
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();
