@@ -8,6 +8,10 @@ const computerScore_span = document.querySelector("#computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result > p");
 
+let endGame_div = document.querySelector(".end-game");
+let choices_div = document.querySelector("#choices");
+let newGame_div = document.querySelector(".new-game");
+
 const rock_div = document.querySelector("#r");
 const paper_div = document.querySelector("#p");
 const scissors_div = document.querySelector("#s");
@@ -22,13 +26,17 @@ const reset = () => {
     userScore = 0;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
+    choices_div.style.display = "flex";
+    endGame_div.style.display = "none";
+    // choices_div.style.display = "none";
   }
 };
 
 const finish = () => {
   if ((userScore === 5) | (computerScore === 5)) {
     result_div.innerHTML = "finish";
-    reset();
+    choices_div.style.display = "none";
+    endGame_div.style.display = "flex";
   }
 };
 
@@ -62,6 +70,8 @@ const getComputerChoice = () => {
 };
 
 //Round
+
+newGame_div.addEventListener("click", () => reset());
 
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();

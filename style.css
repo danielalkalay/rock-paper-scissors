@@ -60,11 +60,12 @@ header > h1 {
   align-items: center;
 }
 
-.choices {
+#choices {
+  display: flex;
+  /* display: none; */
   border: solid 4px white;
   padding: 1rem;
   gap: 4rem;
-  display: flex;
   margin: 1rem;
   border-radius: 15px;
   justify-content: center;
@@ -75,4 +76,12 @@ header > h1 {
   height: auto;
   border: solid white;
   border-radius: 50%;
+}
+
+.new-game {
+  font-size: 40px;
+  color: white;
+}
+.new-game:hover {
+  color: yellow;
 }
