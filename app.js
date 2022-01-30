@@ -23,23 +23,21 @@ newGame_div.addEventListener("click", () => reset());
 const reset = () => {
   computerScore = 0;
   userScore = 0;
-  userScore_span.innerHTML = userScore;
-  computerScore_span.innerHTML = computerScore;
+  userScore_span.innerText = userScore;
+  computerScore_span.innerText = computerScore;
   choices_div.style.display = "flex";
   endGame_div.style.display = "none";
-  result_div.innerHTML = "do your first move";
-  // if ((result_div.innerHTML = "finish")) {
-  // }
+  result_div.innerText = "do your first move";
 };
 
 const finish = () => {
   if ((userScore === 5) | (computerScore === 5)) {
     if (userScore === 5) {
-      result_div.innerHTML = "you are the winer out of five games";
+      result_div.innerText = "you are the winer out of five games";
       choices_div.style.display = "none";
       endGame_div.style.display = "flex";
     } else {
-      result_div.innerHTML = "the computer is the winer out of five games";
+      result_div.innerText = "the computer is the winer out of five games";
       choices_div.style.display = "none";
       endGame_div.style.display = "flex";
     }
@@ -50,20 +48,20 @@ const finish = () => {
 
 const win = (userChoice) => {
   userScore++;
-  userScore_span.innerHTML = userScore;
-  result_div.innerHTML = `you   win`;
+  userScore_span.innerText = userScore;
+  result_div.innerText = `you   win`;
   finish();
 };
 
 const lose = () => {
   computerScore++;
-  computerScore_span.innerHTML = computerScore;
-  result_div.innerHTML = `computer  win , try again`;
+  computerScore_span.innerText = computerScore;
+  result_div.innerText = `computer  win , try again`;
   finish();
 };
 
 const draw = () => {
-  result_div.innerHTML = "it's a draw";
+  result_div.innerText = "it's a draw";
   finish();
 };
 
