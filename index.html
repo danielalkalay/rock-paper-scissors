@@ -8,31 +8,36 @@
     <title>Rock Paper scissors</title>
   </head>
   <body>
+    <header><h1>Rock Paper scissors</h1></header>
     <div class="first-section">
-      <header><h1>Rock Paper scissors</h1></header>
-    </div>
+      <div class="wraper">
+        <div class="score-board">
+          <div id="user-label" class="badge">
+            user : <span id="user-score">0</span>
+            <div class="sign" id="user-sign">
+              <img
+                class="user-sign"
+                src="./images/rock.png"
+                alt="user-pick-img"
+              />
+            </div>
+          </div>
 
-    <div class="score-board">
-      <div id="user-label" class="badge">
-        user : <span id="user-score">0</span>
-        <div class="sign" id="user-sign">
-          <img class="user-sign" src="./images/rock.png" alt="user-pick-img" />
+          <div id="computer-label" class="badge">
+            computer : <span id="computer-score">0</span>
+            <div class="sign" id="computer-sign">
+              <img
+                class="comp-sign"
+                src="./images/paper.png"
+                alt="computer-pick-img"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div id="computer-label" class="badge">
-        computer : <span id="computer-score">0</span>
-        <div class="sign" id="computer-sign">
-          <img
-            class="comp-sign"
-            src="./images/paper.png"
-            alt="computer-pick-img"
-          />
+        <div class="result">
+          <p>Do your first move</p>
         </div>
-      </div>
-
-      <div class="result">
-        <p></p>
       </div>
     </div>
 

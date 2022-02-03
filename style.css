@@ -11,11 +11,15 @@ body {
 }
 
 .first-section {
-  background-color: white;
   /* background-color: rgb(15, 47, 228); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 header {
+  background-color: white;
   padding: 1rem;
   width: 100vw;
   text-align: center;
@@ -26,20 +30,25 @@ header > h1 {
   font-size: 4rem;
   /* color: white; */
 }
+.wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  border: solid white;
+  font-size: 2rem;
+  border-radius: 15px;
+  margin: 2rem;
+  padding: 1rem;
+  width: max-content;
+}
 
 .score-board {
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  border: solid white;
-  color: white;
-  margin: 2rem;
   text-align: center;
-  border-radius: 15px;
-  font-size: 2rem;
-  width: clamp(320px, 40%, 60%);
   justify-content: center;
   align-items: center;
+  /* text-align: center; */
 }
 
 .user-display {
@@ -55,7 +64,11 @@ header > h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: clamp(20%, fit-content, 200px);
+  /* width: clamp(20%, fit-content, 200px); */
+
+  width: 200px;
+  height: 250px;
+  justify-content: space-around;
   text-align: center;
   font-size: 2rem;
   border-radius: 15px;
@@ -72,6 +85,10 @@ header > h1 {
 
 .sign > img {
   height: 100%;
+}
+.result {
+  font-size: 24px;
+  text-align: center;
 }
 
 .seconed-section {
