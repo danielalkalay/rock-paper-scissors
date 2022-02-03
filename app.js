@@ -14,9 +14,9 @@ const result_div = document.querySelector(".result > p");
 let userImg = document.querySelector(".user-sign");
 let compImg = document.querySelector(".comp-sign");
 
-const rock_div = document.querySelector("#r");
-const paper_div = document.querySelector("#p");
-const scissors_div = document.querySelector("#s");
+const rock_div = document.querySelector("#rock");
+const paper_div = document.querySelector("#paper");
+const scissors_div = document.querySelector("#scissors");
 
 // functions
 
@@ -75,8 +75,9 @@ const draw = () => {
 
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();
-  userImg.src = `/images/${userChoice}.png`;
-  compImg.src = `/images/${computerChoice}.png`;
+  console.log(userChoice);
+  userImg.src = `./images/${userChoice}.png`;
+  compImg.src = `./images/${computerChoice}.png`;
 
   const round = `${userChoice + computerChoice}`;
 
