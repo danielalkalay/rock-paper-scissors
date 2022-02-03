@@ -2,6 +2,8 @@
 
 let userScore = 0;
 let computerScore = 0;
+let roundWinner = "";
+
 let endGame_div = document.querySelector(".end-game");
 let choices_div = document.querySelector("#choices");
 let newGame_div = document.querySelector(".new-game");
@@ -9,6 +11,8 @@ const userScore_span = document.querySelector("#user-score");
 const computerScore_span = document.querySelector("#computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_div = document.querySelector(".result > p");
+let userImg = document.querySelector(".user-sign");
+let compImg = document.querySelector(".comp-sign");
 
 const rock_div = document.querySelector("#r");
 const paper_div = document.querySelector("#p");
@@ -23,6 +27,8 @@ newGame_div.addEventListener("click", () => reset());
 const reset = () => {
   computerScore = 0;
   userScore = 0;
+  userImg.src = "";
+  compImg.src = "";
   userScore_span.innerText = userScore;
   computerScore_span.innerText = computerScore;
   choices_div.style.display = "flex";
@@ -36,20 +42,22 @@ const finish = () => {
       result_div.innerText = "you are the winer out of five games";
       choices_div.style.display = "none";
       endGame_div.style.display = "flex";
+      newGame_div.style.display = "flex";
     } else {
       result_div.innerText = "the computer is the winer out of five games";
       choices_div.style.display = "none";
       endGame_div.style.display = "flex";
+      newGame_div.style.display = "flex";
     }
   }
 };
 
 //conclusion functions
 
-const win = (userChoice) => {
+const win = () => {
   userScore++;
   userScore_span.innerText = userScore;
-  result_div.innerText = `you   win`;
+  result_div.innerText = `you won`;
   finish();
 };
 
@@ -61,46 +69,57 @@ const lose = () => {
 };
 
 const draw = () => {
-  result_div.innerText = "it's a draw";
+  result_div.innerText = "it's a draw, both of you chose the same";
   finish();
-};
-
-// computer random choice
-
-const getComputerChoice = () => {
-  const choices = ["r", "p", "s"];
-  const randomNum = Math.floor(Math.random() * 3);
-  return choices[randomNum];
 };
 
 //Round
 
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();
+  userImg.src = `/images/${userChoice}.png`;
+  compImg.src = `/images/${computerChoice}.png`;
+
   const round = `${userChoice + computerChoice}`;
 
   switch (round) {
-    case "rs":
-    case "pr":
-    case "sp":
-      win();
+    case "rockscissors":
+    case "paperrock":
+    case "scissorspaper":
+      win(userChoice, computerChoice);
       break;
-    case "sr":
-    case "rp":
-    case "ps":
+    case "scissorsrock":
+    case "rockpaper":
+    case "paperscissors":
       lose();
       break;
-    case "ss":
-    case "rr":
-    case "pp":
+    // case userChoice === computerChoice:
+    case "scissorsscissors":
+    case "rockrock":
+    case "paperpaper":
       draw();
       break;
   }
 };
 
+// computer random choice
+
+const getComputerChoice = () => {
+  const choices = ["rock", "paper", "scissors"];
+  const randomNum = Math.floor(Math.random() * 3);
+
+  return choices[randomNum];
+};
+
+// show choice pic
+
+// the three options that you choose of, after a choice, in the main function
+// callback function -playRound- r/p/s = user choice
+//
+
 const main = () => {
-  rock_div.addEventListener("click", () => playRound("r"));
-  paper_div.addEventListener("click", () => playRound("p"));
-  scissors_div.addEventListener("click", () => playRound("s"));
+  rock_div.addEventListener("click", () => playRound("rock"));
+  paper_div.addEventListener("click", () => playRound("paper"));
+  scissors_div.addEventListener("click", () => playRound("scissors"));
 };
 main();
