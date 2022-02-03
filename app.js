@@ -27,8 +27,6 @@ newGame_div.addEventListener("click", () => reset());
 const reset = () => {
   computerScore = 0;
   userScore = 0;
-  // userImg.src = "";
-  // compImg.src = "";
   userScore_span.innerText = userScore;
   computerScore_span.innerText = computerScore;
   choices_div.style.display = "flex";
