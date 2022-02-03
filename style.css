@@ -51,15 +51,6 @@ header > h1 {
   /* text-align: center; */
 }
 
-.user-display {
-  display: flex;
-  align-items: center;
-}
-.user-display > img {
-  width: 5rem;
-  height: auto;
-}
-
 .badge {
   display: flex;
   flex-direction: column;
@@ -82,7 +73,9 @@ header > h1 {
   width: 80px;
   object-fit: cover;
 }
-
+#computer-sign > img {
+  transform: rotateY(180deg);
+}
 .sign > img {
   height: 100%;
 }
